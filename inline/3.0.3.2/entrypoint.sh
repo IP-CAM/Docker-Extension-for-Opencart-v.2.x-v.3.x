@@ -19,8 +19,6 @@ if [[ -f "${WWW_PATH}/install/cli_install.php" ]]; then
 
   rm -rf ${WWW_PATH}/install
   mv ${WWW_PATH}/.htaccess.txt /var/www/html/.htaccess
-
-  chown -R ${APACHE_RUN_USER}:${APACHE_RUN_USER_ID} ${WWW_PATH}
 fi
 
 docker-init.sh
