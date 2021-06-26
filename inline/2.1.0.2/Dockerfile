@@ -1,4 +1,4 @@
-FROM timrod/php-apache:5.6
+FROM timrod/php-apache:7.2
 
 ENV OPENCART_VERSION 2.1.0.2
 ENV WWW_PATH /var/www/html
