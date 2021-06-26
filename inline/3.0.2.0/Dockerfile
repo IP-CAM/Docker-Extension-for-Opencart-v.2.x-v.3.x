@@ -15,6 +15,7 @@ ENV OPENCART_DB_PORT 3306
 ENV OPENCART_DB_PREFIX oc_
 
 RUN set -xe \
+    && mv /var/www/html/index.php /var/www/html/phpinfo.php \
 	&& curl -o /tmp/opencart.zip -L https://github.com/opencart/opencart/releases/download/${OPENCART_VERSION}/${OPENCART_VERSION}-OpenCart.zip \
     && unzip /tmp/opencart.zip -d /tmp/ \
     && rsync -avu /tmp/upload/ ${WWW_PATH}/ \
