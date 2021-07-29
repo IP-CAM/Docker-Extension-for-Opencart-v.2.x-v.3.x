@@ -14,6 +14,8 @@ ENV OPENCART_DB_DATABASE opencart
 ENV OPENCART_DB_PORT 3306
 ENV OPENCART_DB_PREFIX oc_
 
+RUN pecl install mcrypt-1.0.4 && docker-php-ext-enable mcrypt
+
 RUN set -xe \
     && mv /var/www/html/index.php /var/www/html/phpinfo.php \
     && curl -o /tmp/opencart.zip -L https://github.com/opencart/opencart/releases/download/${OPENCART_VERSION}/${OPENCART_VERSION}-compiled.zip \
